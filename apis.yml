@@ -1,7 +1,17 @@
 aid: panaya
 name: Panaya
-description: Panaya is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Panaya is an enterprise change-intelligence and agentic-testing platform for
+  business applications, helping organizations de-risk changes to SAP (including
+  S/4HANA migrations and upgrades), Oracle (EBS, Cloud, NetSuite), Salesforce,
+  Workday, ServiceNow and SuccessFactors. Its platform combines change impact
+  analysis, test management and AI-driven test automation, with an agentic layer
+  ("Seemore") that analyzes changes, generates and fixes tests, and guides teams.
+  Panaya exposes a REST API (the Test Dynamix APIs plus code/patch upload and
+  mass-export endpoints) with token-based authentication, documented rate limits,
+  outbound webhooks via its Automation Rules Center, and integrations with Jira,
+  SAP ChaRM and SAP Cloud ALM. Panaya is owned by Infosys and was previously
+  backed by Battery Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/panaya/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +19,123 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://www.panaya.com/wp-content/uploads/2021/01/panaya-logo.png
 tags:
 - Company
-apis: []
+- Testing
+- Test Automation
+- Test Management
+- Change Management
+- Change Impact Analysis
+- ERP
+- SAP
+- Oracle
+- Salesforce
+- Quality Assurance
+- DevOps
+apis:
+- name: Panaya API
+  description: >-
+    Panaya's REST API surface, including the Test Dynamix APIs (Transaction,
+    Cycles, Folder, Business Process, Test, Test Step, Step Run, Defect,
+    Requirements — each supporting get-all/get/create/update), mass-export APIs,
+    custom-code / patch upload APIs, and project update calls. Requests are
+    scoped to a numeric projectId and authenticated with an X-Auth-Token
+    (email:token) or an exchanged access token.
+  humanURL: https://success.panaya.com/docs/api
+  baseURL: https://my.panaya.com/api
+  tags:
+  - Testing
+  - Test Management
+  - ERP
+  properties:
+  - type: Documentation
+    url: https://success.panaya.com/docs/api
+  - type: APIReference
+    url: https://success.panaya.com/docs/panaya-testing-api-supported-entities-and-functions
+  - type: GettingStarted
+    url: https://success.panaya.com/docs/api-guide
+  - type: Authentication
+    url: authentication/panaya-authentication.yml
+  - type: RateLimits
+    url: rate-limits/panaya-rate-limits.yml
+  - type: Webhooks
+    url: asyncapi/panaya-webhooks.yml
+  - type: DataModel
+    url: data-model/panaya-data-model.yml
+common:
+- type: Website
+  url: https://www.panaya.com
+- type: DeveloperPortal
+  url: https://success.panaya.com/docs/api
+- type: Documentation
+  url: https://success.panaya.com/docs/api
+- type: APIReference
+  url: https://success.panaya.com/docs/panaya-testing-api-supported-entities-and-functions
+- type: GettingStarted
+  url: https://success.panaya.com/docs/api-guide
+- type: Authentication
+  url: authentication/panaya-authentication.yml
+- type: Conventions
+  url: conventions/panaya-conventions.yml
+- type: RateLimits
+  url: rate-limits/panaya-rate-limits.yml
+- type: Webhooks
+  url: asyncapi/panaya-webhooks.yml
+- type: DataModel
+  url: data-model/panaya-data-model.yml
+- type: Lifecycle
+  url: lifecycle/panaya-lifecycle.yml
+- type: ChangeLog
+  url: changelog/panaya-changelog.yml
+- type: ChangeLog
+  url: https://success.panaya.com/docs/panaya-release-notes
+- type: Conformance
+  url: conformance/panaya-conformance.yml
+- type: Compliance
+  url: https://www.panaya.com/gdpr-compliance/
+- type: Security
+  url: https://www.panaya.com/information-security-policy/
+- type: VulnerabilityDisclosure
+  url: security/panaya-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/panaya-domain-security.yml
+- type: LLMsTxt
+  url: llms/panaya-llms.txt
+- type: Support
+  url: https://success.panaya.com/docs
+- type: HelpCenter
+  url: https://success.panaya.com/docs
+- type: Blog
+  url: https://www.panaya.com/blog/
+- type: TermsOfService
+  url: https://www.panaya.com/panaya-terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.panaya.com/panaya-privacy/
+- type: Login
+  url: https://my.panaya.com/site/rdx
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1

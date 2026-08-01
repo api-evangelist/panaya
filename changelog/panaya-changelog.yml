@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/panaya-release-notes
+docs:
+  release_notes: https://success.panaya.com/docs/panaya-release-notes
+  test_automation_updates: https://success.panaya.com/docs/test-automation-product-updates
+  previous_release_notes: https://success.panaya.com/docs/our-previous-release-notes
+  future_schedule: https://success.panaya.com/docs/our-future-releases-schedule
+scheme: monthly-release-notes
+cadence: monthly
+current:
+  label: "July 2026 Release"
+  url: https://success.panaya.com/docs/panaya-release-notes
+notes: >-
+  Panaya publishes dated monthly release notes plus a separate Test Automation
+  product-updates feed and a forward-looking release schedule. These are product
+  release notes rather than a per-endpoint API changelog; captured here as the
+  provider's dated change record.
+entries:
+  - version: "July 2026 Release"
+    date: '2026-07'
+    url: https://success.panaya.com/docs/panaya-release-notes
+    breaking: false
+    highlights:
+      - Current published monthly release notes.

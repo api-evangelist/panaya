@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/setting-up-webhooks
+spec_type: Webhooks
+docs: https://success.panaya.com/docs/setting-up-webhooks
+mechanism:
+  name: Automation Rules Center web requests
+  direction: outbound
+  description: >-
+    Panaya's Automation Rules Center sends automated outbound web requests
+    (webhooks) to third-party applications (e.g. Jira) when a configured rule
+    fires. Each rule sets a target URL, HTTP method (POST), headers
+    (Content-Type / Accept application/json, Basic Authorization) and a
+    user-supplied JSON payload templated to the destination system's API.
+  transport: http
+  default_method: POST
+  auth_to_target: Basic (base64-encoded target credentials / access token)
+  payload_format: user-defined JSON per destination system
+triggers:
+  documented_event_types: not-enumerated
+  example: >-
+    A defect/bug event in Panaya can create a corresponding issue in Jira via the
+    target system's REST API. Configuration is validated against a system defect ID.
+validation:
+  description: >-
+    "Validate your web request configuration" against a defect ID creates the
+    destination record immediately.
+notes: >-
+  Panaya webhooks are rule-driven outbound calls the customer templates to a
+  target system rather than a fixed catalog of named event types with a fixed
+  Panaya payload schema. No AsyncAPI document is published.

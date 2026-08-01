@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.panaya.com/information-security-policy/
+docs:
+  - https://www.panaya.com/information-security-policy/
+  - https://www.panaya.com/gdpr-compliance/
+standards:
+  - id: soc2
+    conforms: true
+    evidence: "Information Security Policy states Panaya is audited and verified against SOC 2 (System and Organization Controls)."
+    source: https://www.panaya.com/information-security-policy/
+  - id: gdpr
+    conforms: true
+    evidence: "Dedicated GDPR regulatory compliance page and Data Processing Agreement published."
+    source: https://www.panaya.com/gdpr-compliance/
+  - id: ccpa
+    conforms: true
+    evidence: "CCPA notice published under legal center."
+    source: https://www.panaya.com/ccpa-notice/
+  - id: oauth2
+    conforms: false
+    evidence: "API uses proprietary X-Auth-Token / access-token exchange, not OAuth 2.0."
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: "Error envelope not documented; no application/problem+json declared."
+  - id: iso-27001
+    conforms: unknown
+    evidence: "Not named in the public Information Security Policy."

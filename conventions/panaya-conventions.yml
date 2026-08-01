@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/api
+docs:
+  - https://success.panaya.com/docs/api-guide
+  - https://success.panaya.com/docs/api-tips-and-tricks
+conventions:
+  authentication:
+    style: token-header
+    header: X-Auth-Token
+    value_format: "email:token"
+    alternative: access-token exchange (1h response token) at /api/accesstoken
+    ref: authentication/panaya-authentication.yml
+  base_url:
+    pattern: "https://{region}.panaya.com/api"
+    regions:
+      - {region: my, host: my.panaya.com, note: default / non-EMEA}
+      - {region: emea, host: emea.panaya.com, note: EMEA accounts}
+  content_type: application/json
+  identifiers:
+    project_id:
+      description: Most calls are scoped to a numeric projectId retrieved via "Get Projects".
+      docs: https://success.panaya.com/docs/project-id-for-apis
+  rate_limiting:
+    documented: true
+    ref: rate-limits/panaya-rate-limits.yml
+    signal_headers: not-documented
+  idempotency:
+    supported: not-documented
+  pagination:
+    style: not-documented
+  versioning:
+    scheme: uri-path
+    note: Documentation paths reference a /v1/docs prefix; API base is /api.
+  error_envelope:
+    format: not-documented
+  tooling:
+    postman:
+      description: Panaya ships a shared Postman collection of API examples to import.
+      docs: https://success.panaya.com/docs/api-guide
+      code_generation: [python, csharp, ruby, curl]

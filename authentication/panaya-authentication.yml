@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/authenticating-via-api-with-an-api-token
+docs:
+  - https://success.panaya.com/docs/authenticating-via-api-with-an-api-token
+  - https://success.panaya.com/docs/how-to-authenticate-to-panaya-via-api-with-an-access-token
+  - https://success.panaya.com/docs/how-to-create-your-token
+summary:
+  types: [apiKey, custom-token]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    Panaya exposes two documented, proprietary token auth mechanisms. Neither is
+    OAuth 2.0 / OIDC. Credentials are always prefixed with the account email.
+schemes:
+  - name: api-token
+    type: apiKey
+    in: header
+    parameter_name: X-Auth-Token
+    value_format: "email:token"
+    login_required: false
+    token_lifetime: non-expiring-revocable
+    description: >-
+      Long-lived API token passed on every request in the X-Auth-Token header as
+      "email:token" (the Panaya login email, a colon, then the generated token).
+      No login/exchange call required; tokens never expire but can be revoked by
+      an administrator.
+    source: https://success.panaya.com/docs/authenticating-via-api-with-an-api-token
+  - name: access-token
+    type: token-exchange
+    token_endpoints:
+      - https://my.panaya.com/api/accesstoken
+      - https://emea.panaya.com/api/accesstoken
+    http_method: POST
+    request_content_type: application/x-www-form-urlencoded
+    request_params: [username, token]
+    response_token_lifetime_seconds: 3600
+    description: >-
+      Two-step scheme: a user-created access token (optional expiry) is POSTed to
+      /api/accesstoken to receive a short-lived response token valid for 1 hour,
+      which is then used on subsequent API calls.
+    source: https://success.panaya.com/docs/how-to-authenticate-to-panaya-via-api-with-an-access-token
+admin_controls:
+  - Monitoring and disabling user tokens (administrator):
+      https://success.panaya.com/docs/how-to-monitor-and-disable-user-tokens-as-administrator

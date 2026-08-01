@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/panaya-release-notes
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://success.panaya.com/docs/api-guide
+release_notes:
+  url: https://success.panaya.com/docs/panaya-release-notes
+  cadence: monthly
+  future_schedule: https://success.panaya.com/docs/our-future-releases-schedule
+deprecation:
+  policy_url: null
+  sunset_header: not-documented
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+notes: >-
+  Panaya is a SaaS product with monthly release notes and a published future
+  release schedule, but does not expose a public status page, a formal API
+  deprecation policy, or RFC 8594 Sunset/Deprecation header support in its docs.
+deprecated_operations: []

@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/what-are-the-default-api-call-limits
+docs: https://success.panaya.com/docs/what-are-the-default-api-call-limits
+scope: per-user-and-per-account
+notes: >-
+  Default limits documented by Panaya. The docs do not specify which HTTP
+  response headers signal throttling.
+rate_limits:
+  - name: write-operations
+    description: Create / Update (POST / PUT) operations
+    limit_count: 12
+    window: minute
+    per: user
+  - name: read-operations
+    description: Get / Get-all (read) operations
+    limit_count: 30
+    window: minute
+    per: user
+  - name: custom-code-patches-upload
+    description: Custom Code / Patches upload
+    limit_count: 2
+    window: day
+    per: user
+  - name: mass-export-account
+    description: Mass Export APIs (export tests/defects) per account
+    limit_count: 100
+    window: day
+    per: account
+  - name: mass-export-user
+    description: Mass Export APIs (export tests/defects) per user
+    limit_count: 12
+    window: minute
+    per: user
+  - name: api-request-status-account
+    description: API request status polling per account
+    limit_count: 20
+    window: minute
+    per: account
+  - name: api-request-status-user
+    description: API request status polling per user
+    limit_count: 30
+    window: minute
+    per: user

@@ -1,0 +1,67 @@
+generated: '2026-07-20'
+method: searched
+source: https://success.panaya.com/docs/panaya-testing-api-supported-entities-and-functions
+docs: https://success.panaya.com/docs/panaya-testing-api-supported-entities-and-functions
+notes: >-
+  Entities are the Test Dynamix API "supported entities" documented by Panaya.
+  Each supports Get-all, Get, Post (create) and Put (update). Relationships
+  marked source=docs are stated in the docs; those marked source=inferred follow
+  the standard Panaya test-management hierarchy and are not each explicitly
+  documented as $ref links (no OpenAPI is published).
+entities:
+  - name: Transaction
+    api: Transaction API
+    operations: [get_all, get, post, put]
+  - name: Cycle
+    api: Cycles API
+    operations: [get_all, get, post, put]
+  - name: Folder
+    api: Folder API
+    operations: [get_all, get, post, put]
+  - name: BusinessProcess
+    api: Business Process API
+    operations: [get_all, get, post, put]
+  - name: Test
+    api: Test API
+    operations: [get_all, get, post, put]
+  - name: TestStep
+    api: Test Step API
+    operations: [get_all, get, post, put]
+  - name: StepRun
+    api: Step Run API
+    operations: [get_all, get, post, put]
+  - name: Defect
+    api: Defect API
+    operations: [get_all, get, post, put]
+  - name: Requirement
+    api: Requirements API
+    operations: [get_all, get, post, put]
+scoping:
+  project:
+    description: Test Dynamix entities are scoped to a numeric projectId.
+    source: docs
+relationships:
+  - from: Test
+    to: TestStep
+    kind: has_many
+    source: inferred
+  - from: TestStep
+    to: StepRun
+    kind: has_many
+    source: inferred
+  - from: Cycle
+    to: Test
+    kind: has_many
+    source: inferred
+  - from: BusinessProcess
+    to: Test
+    kind: has_many
+    source: inferred
+  - from: Requirement
+    to: Test
+    kind: has_many
+    source: inferred
+  - from: Defect
+    to: Test
+    kind: belongs_to
+    source: inferred
